@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "baseUrl": "./src",
+      "moduleResolution": "node",
+      "outDir": "./bin",
+      "sourceMap": true,
+      "allowJs": true,
+      "importHelpers": true,
+      "strict": true,
+      "strictPropertyInitialization": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true
+    },
+    "include": [
+      "src"
+    ]
+  }

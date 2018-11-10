@@ -1,0 +1,18 @@
+# 忽略掉所有文件名是*.js.map的文件.
+*.js.map
+
+# 这个log文件也不需要
+npm-debug.log
+
+# 默认的，这货node_modules不需要
+node_modules/
+
+# typescript 用到的 typings 也不需要
+typings/
+
+# 构建最终目录也不需要
+dist/
+bin/
+
+# 代码覆盖报告目录 也不需要
+coverage/

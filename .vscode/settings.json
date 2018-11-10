@@ -1,0 +1,32 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	// "http.proxy": "http://127.0.0.1:8888",
+	// "http.proxyStrictSSL": false,
+	// "editor.fontFamily": "微软雅黑,WenQuanYi Micro Hei Mono",
+	"editor.fontSize": 18,
+	// 禁用vscode本身的js检查
+	// "javascript.validate.enable": false,
+	"files.exclude": {
+		// 排除目录
+		"node_modules": true,
+		"public": true,
+		// "typings": true,
+		"bin": true,
+		"coverage": true,
+		"typescript-coverage": true,
+		"*.log": true,
+		"*.sublime*": true,
+		// 正则排除
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.DS_Store": true,
+		"**/*.js": {
+			"when": "$(basename).ts"
+		},
+		"**/*.js.map": {
+			"when": "$(basename)"
+		}
+	},
+	"typescript.referencesCodeLens.enabled": true,
+	"typescript.tsdk": "./node_modules/typescript/lib"
+}

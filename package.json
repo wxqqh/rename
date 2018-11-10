@@ -1,0 +1,30 @@
+{
+  "name": "rename",
+  "version": "1.0.0",
+  "description": "rename ",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm run lint",
+    "init": "npm run install:modules",
+    "install:modules": "npm i",
+    "compile": "tsc -p .",
+    "start": "node bin/app.js",
+    "lint": "tslint -c ./tslint.json src/**/*.ts test/**/*.ts scripts/**/*.ts",
+    "build": "npm run lint && npm run compile && echo finish",
+    "debug": "set DEBUG=* && set NODE_ENV=development && node --inspect--brk bin/app.js"
+  },
+  "author": "wxqqh@qq.com",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.1.0",
+    "iconv-lite": "^0.4.24",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@types/debug": "0.0.31",
+    "@types/node": "^10.12.5",
+    "@types/request": "0.0.45",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  }
+}

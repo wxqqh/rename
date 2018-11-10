@@ -1,0 +1,62 @@
+// http://palantir.github.io/tslint/rules/
+{
+  /*
+   * Possible values:
+   * - the name of a built-in config
+   * - the name of an NPM module which has a "main" file that exports a config object
+   * - a relative path to a JSON file
+   */
+  "extends": "tslint:latest",
+  "rules": {
+    /*
+     * Any rules specified here will override those from the base config we are extending
+     */
+    // "no-constructor-vars": true,
+    "quotemark": [
+      true,
+      "double",
+      "avoid-escape"
+    ],
+    /*
+     * Disallows the use of require statements except in import statements.
+     * In other words, the use of forms such as var module = require("module") are banned. 
+     * Instead use ES6 style imports or import foo = require('foo') imports.
+     */
+    "no-var-requires": true,
+    /**
+     * Disallows invocation of require()
+     * Prefer the newer ES6-style imports over require().
+     */
+    "no-require-imports": true,
+    /**
+     * Requires or disallows trailing commas in array and object literals, 
+     * destructuring assignments and named imports.
+     */
+    "trailing-comma": true,
+    /**
+     * Requires keys in object literals to be sorted alphabetically
+     */
+    "object-literal-sort-keys": false,
+    /**
+     * Requires that import statements be alphabetized.
+     * Enforce a consistent ordering for ES6 imports: - Named imports must be alphabetized (i.e. “import {A, B, C} from “foo”;”) - The exact ordering can be controled by the named-imports-order option. - “longName as name” imports are ordered by “longName”. - Import sources must be alphabetized  * * within groups, i.e.: import * as foo from “a”; import * as bar from “b”; - Groups of imports are delineated by blank lines. You can use these to group imports however you like, e.g. by first- vs. third-party or thematically.
+     */
+    "ordered-imports": false,
+    /**
+     * Disallows traditional (non-arrow) function expressions.
+     */
+    "only-arrow-functions": false,
+    /**
+     * Requires lines to be under a certain max length.
+     */
+    "max-line-length": [
+      false
+    ]
+  },
+  "rulesDirectory": [
+    /*
+     * A list of relative or absolute paths to directories that contain custom rules.
+     * See the Custom Rules documentation below for more details.
+     */
+  ]
+}
