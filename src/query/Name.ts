@@ -5,8 +5,10 @@ const LOG = debug(`${__dirname}${__filename}`);
 import { DataLoader } from "../util";
 
 export const NameWWWName321Net = (name: string) => {
-    const query = "dx" + iconv.encode(name, "GB2312");
-    return DataLoader({
-        url: `http://www.name321.net/xmdf.php?${encodeURIComponent(new Buffer(query).toString("base64"))}`
+    const query = iconv.encode("dx" + name, "GB2312");
+    const result = DataLoader({
+        url: `http://www.name321.net/xmdf.php?${encodeURIComponent(query.toString("base64"))}`
     });
+    // 解析返回结果
+    return result;
 };
