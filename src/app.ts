@@ -3,9 +3,10 @@
 import * as debug from "debug";
 
 const LOG = debug(`${__dirname}${__filename}`);
-const Error = debug(`${__dirname}${__filename}:ERROR`);
+const ERROR = debug(`${__dirname}${__filename}:ERROR`);
 
 import * as query from "./query";
+import { __await } from 'tslib';
 
 const firstName = "伍";
 const midName = "芷";
@@ -23,10 +24,14 @@ const main = async () => {
     try {
         const name = firstName + midName + lastName;
         LOG(`start ${name} ${sex} ${birthday.toUTCString()}`);
+        
         const result = await query.CharactersWWWName321Net(name, sex, birthday);
-        LOG(`finish ${result}`);
+        LOG(`Character finish ${result}`);
+
+        const nameResult =await query.NameWWWName321Net(name);
+        LOG(`Name finish ${nameResult}`);
     } catch (e) {
-        Error(e);
+        ERROR(e);
     }
 };
 
