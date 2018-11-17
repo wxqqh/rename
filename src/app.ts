@@ -1,4 +1,4 @@
-import * as iconv from "iconv-lite";
+// import * as iconv from "iconv-lite";
 
 import * as debug from "debug";
 
@@ -11,7 +11,7 @@ const firstName = "伍";
 const midName = "芷";
 const lastName = "巧";
 
-const sex = "男";
+const sex = "女";
 
 const birthday = new Date(2018, 10, 6, 17, 20);
 
