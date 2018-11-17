@@ -1,6 +1,5 @@
 import * as iconv from "iconv-lite";
 import * as debug from "debug";
-import { stringify } from "querystring";
 
 const LOG = debug(`${__dirname}${__filename}`);
 
@@ -10,7 +9,7 @@ export const CharactersWWWName321Net = async (name: string, sex: string, date: D
 
     const result = await DataLoader({
         url: "http://www.name321.net/baidu/cm.php",
-        proxy: "http://127.0.0.1:8888",
+        // proxy: "http://127.0.0.1:8888",
         method: "POST",
         form: {
             name: iconv.encode(name, "GB2312"),
