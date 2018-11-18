@@ -5,7 +5,7 @@ const LOG = debug(`${__dirname}${__filename}`);
 
 export const DataLoader = (options: request.Options) => {
     options.encoding = null;
-    return new Promise((resolve, reject) => {
+    return new Promise<string>((resolve, reject) => {
         request(options, (err, res, body) => {
             if (!err && res.statusCode === 200) {
                 if (body) {
