@@ -10,7 +10,7 @@ export class BatchActionService<T> {
     constructor(batchSize: number = 10) {
         this.batchSize = batchSize;
     }
-    public async BatchActoin(list: string[], action: (...args: any[]) => Promise<T>) {
+    public async batchActoin(list: string[], action: (...args: any[]) => Promise<T>) {
         LOG("BatchActoin start");
         // tslint:disable-next-line:no-shadowed-variable
         let T: T[] = [];
