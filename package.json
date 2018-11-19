@@ -11,6 +11,7 @@
     "start": "node bin/app.js",
     "lint": "tslint -c ./tslint.json src/**/*.ts test/**/*.ts scripts/**/*.ts",
     "build": "npm run lint && npm run compile && echo finish",
+    "local": "set DEBUG=* && set NODE_ENV=development && node bin/app.js && echo finish",
     "debug": "set DEBUG=* && set NODE_ENV=development && node --inspect--brk bin/app.js"
   },
   "author": "wxqqh@qq.com",
