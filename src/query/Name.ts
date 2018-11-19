@@ -9,10 +9,12 @@ const LOG = debug(`${__dirname}${__filename}`);
 import { DataLoader } from "../util";
 
 export const NameWWWName321Net = async (queryName: string) => {
+    LOG(`start query ${queryName}`);
     const query = iconv.encode("dx" + queryName, "GB2312");
     const result = await DataLoader({
         url: `http://www.name321.net/xmdf.php?${encodeURIComponent(query.toString("base64"))}`
     });
+    LOG(`finish query ${queryName}`);
 
     const $ = cheerio.load(result, { decodeEntities: false });
 
@@ -32,10 +34,10 @@ export const NameWWWName321Net = async (queryName: string) => {
     const [traditionalChars = "", charFiveCases = "", strokes = "", traditionalStrokes = ""] = ($nameNode.find(".xm_js").html() || "").replace(/<br>|.*[：:]/g, "").split(/\n/).filter((val) => !!val && !/^\s/.test(val));
 
     // FIXME: 繁体字解析有异常, 出现乱码
-    const traditionalCharsSplit = traditionalChars.split("\s{2}");
-    const charFiveCasesSplit = charFiveCases.split("\s{2}");
-    const strokesSplit = strokes.split("\s{2}");
-    const traditionalStrokesSplit = traditionalStrokes.split("\s{2}");
+    const traditionalCharsSplit = traditionalChars.split(/\s{2}/);
+    const charFiveCasesSplit = charFiveCases.split(/\s{2}/);
+    const strokesSplit = strokes.split(/\s{2}/);
+    const traditionalStrokesSplit = traditionalStrokes.split(/\s{2}/);
 
     $nameNode.find(".xm_name b").each((index, ele) => {
         const char: ICharacter = {};
@@ -94,7 +96,7 @@ export const NameWWWName321Net = async (queryName: string) => {
     const [threeTalentType = "", threeTalentScoure = ""] = $threeTalentSummayNode.text().split("三才 ");
     const threeTalentTypeSplit = threeTalentType.split("、");
     // <strong>天、人、地三才 7 6 5</strong>（金土土）暗示健康、生活是否顺利为：
-    const threeTalentElementNode = $threeTalentSummayNode[0].next;
+    const threeTalentElementNode = $threeTalentSummayNode[0] && $threeTalentSummayNode[0].next || {};
     const threeTalentElement = (((threeTalentElementNode.data || "").match(/（([^）]*)）/) || [])[1] || "").split("");
 
     threeTalentScoure.split(" ").forEach((score, index) => {
@@ -108,7 +110,8 @@ export const NameWWWName321Net = async (queryName: string) => {
         name.threeTalent[threeTalent.type] = threeTalent;
         name.threeTalentScore += threeTalent.score;
     });
-    name.threeTalentIndicate[`总评`] = threeTalentElementNode.next.next && threeTalentElementNode.next.next.data || "";
+    name.threeTalentIndicate[`总评`] = threeTalentElementNode.next && threeTalentElementNode.next.next && threeTalentElementNode.next.next.data || "";
+    name.threeTalentLuck = name.threeTalentIndicate[`总评`].slice(-2, -1);
 
     const $threeTalentIndicateNode = $fiveCaseNode.find("ul b").slice(5, 17);
 
