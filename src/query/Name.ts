@@ -34,10 +34,10 @@ export const NameWWWName321Net = async (queryName: string) => {
     const [traditionalChars = "", charFiveCases = "", strokes = "", traditionalStrokes = ""] = ($nameNode.find(".xm_js").html() || "").replace(/<br>|.*[：:]/g, "").split(/\n/).filter((val) => !!val && !/^\s/.test(val));
 
     // FIXME: 繁体字解析有异常, 出现乱码
-    const traditionalCharsSplit = traditionalChars.split("\s{2}");
-    const charFiveCasesSplit = charFiveCases.split("\s{2}");
-    const strokesSplit = strokes.split("\s{2}");
-    const traditionalStrokesSplit = traditionalStrokes.split("\s{2}");
+    const traditionalCharsSplit = traditionalChars.split(/\s{2}/);
+    const charFiveCasesSplit = charFiveCases.split(/\s{2}/);
+    const strokesSplit = strokes.split(/\s{2}/);
+    const traditionalStrokesSplit = traditionalStrokes.split(/\s{2}/);
 
     $nameNode.find(".xm_name b").each((index, ele) => {
         const char: ICharacter = {};
