@@ -42,10 +42,20 @@ const main = async () => {
         LOG(`Name finish ${JSON.stringify(results[0])}`);
         fs.writeFile(`./dist/result_${start}_${end}.json`, JSON.stringify(results), (err) => {
             if (err) {
-                ERROR(`write file error ${err.stack}`);
+                ERROR(`write file json error ${err.stack}`);
                 return;
             }
-            LOG(`Write Name finish ${results.length}`);
+            LOG(`Write Name json finish ${results.length}`);
+        });
+
+        const csv = services.NamesOutputService.output(results);
+
+        fs.writeFile(`./dist/result_${start}_${end}.csv`, csv, (err) => {
+            if (err) {
+                ERROR(`write file csv error ${err.stack}`);
+                return;
+            }
+            LOG(`Write Name csv finish ${results.length}`);
         });
 
     } catch (e) {
