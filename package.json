@@ -19,11 +19,13 @@
     "cheerio": "^1.0.0-rc.2",
     "debug": "^4.1.0",
     "iconv-lite": "^0.4.24",
+    "json2csv": "^4.3.1",
     "request": "^2.88.0"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.9",
     "@types/debug": "0.0.31",
+    "@types/json2csv": "^4.2.0",
     "@types/node": "^10.12.5",
     "@types/request": "0.0.45",
     "tslint": "^5.11.0",
