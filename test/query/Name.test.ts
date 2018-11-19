@@ -7,7 +7,7 @@ const LOG = debug(`${__dirname}${__filename}`);
 const name = "伍芷巧";
 
 describe(__filename, () => {
-    it("query name response success", async () => {
+    it("query NameWWWName321Net response success", async () => {
         const result = await query.NameWWWName321Net(name);
         LOG(`Name finish ${JSON.stringify(result)}`);
 
