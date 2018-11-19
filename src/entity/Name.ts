@@ -28,7 +28,7 @@ export class Name {
     /**
      * 三才总评
      */
-    public threeTalentSummay: string = "";
+    public threeTalentLuck: string = "";
     /**
      * 三才预意
      */

@@ -109,6 +109,7 @@ export const NameWWWName321Net = async (queryName: string) => {
         name.threeTalentScore += threeTalent.score;
     });
     name.threeTalentIndicate[`总评`] = threeTalentElementNode.next.next && threeTalentElementNode.next.next.data || "";
+    name.threeTalentLuck = name.threeTalentIndicate[`总评`].slice(-2, -1);
 
     const $threeTalentIndicateNode = $fiveCaseNode.find("ul b").slice(5, 17);
 
