@@ -6,7 +6,7 @@ export class ReTry {
 
         for (let i = 0; i < time; i++) {
             task = task.catch((reason) => {
-                ERROR(`ReTry doAction error ${reason}`);
+                ERROR(`ReTry doAction error ${reason.stack || reason}`);
                 return action();
             });
         }
