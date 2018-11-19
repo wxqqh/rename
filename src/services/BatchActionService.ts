@@ -19,7 +19,7 @@ export class BatchActionService<T> {
         let count = 1;
         const total = Math.ceil(list.length / this.batchSize);
         while (currentList.length > 0) {
-            LOG(`BatchActoin current count: ${count} ${(count / total).toFixed(2)}%`);
+            LOG(`BatchActoin current count: ${count} ${(count / total * 100).toFixed(2)}%`);
             const tasks = currentList.map((task) => {
                 return ReTry.doAction(() => action(task)).catch<T>((reason) => {
                     ERROR(`${task} ERROR!!! ${reason}`);
