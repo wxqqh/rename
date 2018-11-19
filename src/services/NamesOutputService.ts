@@ -4,7 +4,18 @@ import * as entity from "../entity";
 import * as json2csv from "json2csv";
 
 const LOG = debug(`${__dirname}${__filename}`);
-
+/*
+    json2csv -i result_0_30.json -f name,totalScore,
+    nameCharacters[0].element,nameCharacters[1].element,nameCharacters[2].element,
+    nameCharacters[0].traditionalStrokes,nameCharacters[1].traditionalStrokes,nameCharacters[2].traditionalStrokes,
+    fiveCase.总格.luck,fiveCase.人格.luck,fiveCase.地格.luck,fiveCase.外格.luck,fiveCase.天格.luck,
+    fiveCase.总格.element,fiveCase.人格.element,fiveCase.地格.element,fiveCase.外格.element,fiveCase.天格.element,
+    threeTalentLuck,
+    threeTalent.天.element,threeTalent.人.element,threeTalent.地.element,
+    threeTalent.天.score,threeTalent.人.score,threeTalent.地.score,
+    threeTalentIndicate.总评,
+    fiveCase.总格.indicate,fiveCase.人格.indicate,fiveCase.地格.indicate,fiveCase.外格.indicate,fiveCase.天格.indicate
+*/
 const options: json2csv.json2csv.Options<entity.Name> = {
     fields: [
         { label: "姓名", value: "name" },
