@@ -9,10 +9,12 @@ const LOG = debug(`${__dirname}${__filename}`);
 import { DataLoader } from "../util";
 
 export const NameWWWName321Net = async (queryName: string) => {
+    LOG(`start query ${queryName}`);
     const query = iconv.encode("dx" + queryName, "GB2312");
     const result = await DataLoader({
         url: `http://www.name321.net/xmdf.php?${encodeURIComponent(query.toString("base64"))}`
     });
+    LOG(`finish query ${queryName}`);
 
     const $ = cheerio.load(result, { decodeEntities: false });
 
