@@ -16,11 +16,13 @@
   "author": "wxqqh@qq.com",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "debug": "^4.1.0",
     "iconv-lite": "^0.4.24",
     "request": "^2.88.0"
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.9",
     "@types/debug": "0.0.31",
     "@types/node": "^10.12.5",
     "@types/request": "0.0.45",
