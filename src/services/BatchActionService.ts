@@ -14,10 +14,10 @@ export class BatchActionService<T> {
         LOG("BatchActoin start");
         // tslint:disable-next-line:no-shadowed-variable
         let T: T[] = [];
+        const total = Math.ceil(list.length / this.batchSize);
 
         let currentList = list.splice(0, this.batchSize);
         let count = 1;
-        const total = Math.ceil(list.length / this.batchSize);
         while (currentList.length > 0) {
             LOG(`BatchActoin current count: ${count} ${(count / total * 100).toFixed(2)}%`);
             const tasks = currentList.map((task) => {
