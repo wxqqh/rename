@@ -38,15 +38,16 @@ const main = async () => {
         const names = disc.GirlsDouble.slice(start, end).map((val) => firstName + val);
         const batchActionService = new services.BatchActionService<entity.Name>();
 
-        const nameResult = await batchActionService.batchActoin(names, query.NameWWWName321Net);
-        LOG(`Name finish ${JSON.stringify(nameResult[0])}`);
-        fs.writeFile(`./dist/result_${start}_${end}.json`, JSON.stringify(nameResult), (err) => {
+        const results = await batchActionService.batchActoin(names, query.NameWWWName321Net);
+        LOG(`Name finish ${JSON.stringify(results[0])}`);
+        fs.writeFile(`./dist/result_${start}_${end}.json`, JSON.stringify(results), (err) => {
             if (err) {
                 ERROR(`write file error ${err.stack}`);
                 return;
             }
-            LOG(`Write Name finish ${nameResult.length}`);
+            LOG(`Write Name finish ${results.length}`);
         });
+
     } catch (e) {
         ERROR(e);
     }
