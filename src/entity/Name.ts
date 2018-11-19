@@ -26,6 +26,10 @@ export class Name {
      */
     public threeTalentScore: number = 0;
     /**
+     * 三才总评
+     */
+    public threeTalentSummay: string = "";
+    /**
      * 三才预意
      */
     public threeTalentIndicate: { [key: string]: string } = {};
