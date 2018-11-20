@@ -1,10 +1,9 @@
 import * as iconv from "iconv-lite";
-import * as debug from "debug";
 import * as cheerio from "cheerio";
 
 import { Name, ICharacter, IFiveCase, IThreeTalent } from "../entity";
 
-const LOG = debug(`${__dirname}${__filename}`);
+const LOG = getLogger(__filename);
 
 import { DataLoader } from "../util";
 
