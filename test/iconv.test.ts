@@ -1,7 +1,6 @@
 import * as assert from "assert";
 
 import * as iconv from "iconv-lite";
-import "../src/global/config";
 
 const LOG = getLogger(__filename);
 
