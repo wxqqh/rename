@@ -13,7 +13,8 @@
     "local": "set DEBUG=* && set NODE_ENV=development && node bin/src/app.js && echo finish",
     "debug": "set DEBUG=* && set NODE_ENV=development && node --inspect--brk bin/src/app.js",
     "test": "mocha --recursive --timeout 10000 --harmony --check-leaks bin/test/ --bail",
-    "test:cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --recursive --timeout 10000 --harmony --check-leaks bin/test/",
+    "test:cov": "nyc --reporter=lcov --reporter=text-summary npm test",
+    "test:report": "nyc report --reporter=lcov --reporter=text-summary",
     "debug:local": "npm run compile && node debug bin/src/app.js",
     "debug:remote": "npm run compile && node --inspect--brk bin/src/app.js",
     "debug:mocha": "npm run compile && mocha --inspect--brk --recursive --timeout 10000 --harmony --check-leaks bin/test/ --bail",
@@ -37,8 +38,8 @@
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.5",
     "@types/request": "0.0.45",
-    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "tslint": "^5.11.0",
     "typescript": "^3.1.6"
   }
