@@ -1,9 +1,8 @@
-import * as debug from "debug";
 import * as entity from "../entity";
 
 import * as json2csv from "json2csv";
 
-const LOG = debug(`${__dirname}${__filename}`);
+const LOG = getLogger(__filename);
 /*
     json2csv -i result_0_30.json -f name,totalScore,
     nameCharacters[0].element,nameCharacters[1].element,nameCharacters[2].element,

@@ -1,14 +1,15 @@
 // import * as iconv from "iconv-lite";
 import * as fs from "fs";
-import * as debug from "debug";
 
-const LOG = debug(`${__dirname}${__filename}`);
-const ERROR = debug(`${__dirname}${__filename}:ERROR`);
+import "./global/config";
 
 import * as entity from "./entity";
 import * as query from "./query";
 import * as disc from "./disc";
 import * as services from "./services";
+
+const LOG = getLogger(__filename);
+const ERROR = getLogger(__filename, "ERROR");
 
 const firstName = "伍";
 

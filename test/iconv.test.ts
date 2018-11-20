@@ -1,9 +1,8 @@
 import * as assert from "assert";
 
 import * as iconv from "iconv-lite";
-import * as debug from "debug";
 
-const LOG = debug(`${__dirname}${__filename}`);
+const LOG = getLogger(__filename);
 
 const name = "伍芷巧";
 

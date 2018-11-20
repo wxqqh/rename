@@ -1,7 +1,5 @@
-import * as debug from "debug";
-
-const LOG = debug(`${__dirname}${__filename}`);
-const ERROR = debug(`${__dirname}${__filename}:ERROR`);
+const LOG = getLogger(__filename);
+const ERROR = getLogger(__filename, "ERROR");
 
 import { ReTry, Sleep } from "../util";
 
