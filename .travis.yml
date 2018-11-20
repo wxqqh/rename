@@ -5,8 +5,7 @@ node_js:
   - "10"
 
 env:
-  - DEBUG=*
-  - SH=bash
+  - DEBUG=rename:*;
 
 before_instal:
   - mkdir dist
