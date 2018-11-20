@@ -13,6 +13,7 @@
 		// "typings": true,
 		"bin": true,
 		"coverage": true,
+		".nyc_output": true,
 		"typescript-coverage": true,
 		"*.log": true,
 		"*.sublime*": true,

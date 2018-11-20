@@ -1,5 +1,4 @@
-import * as debug from "debug";
-const ERROR = debug(`${__dirname}${__filename}:ERROR`);
+const ERROR = getLogger(__filename, "ERROR");
 export class ReTry {
     public static doAction<T>(action: () => Promise<T>, time: number = 3) {
         let task = action();
