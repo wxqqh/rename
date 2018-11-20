@@ -1,12 +1,11 @@
 import * as assert from "assert";
-import * as debug from "debug";
 
 import * as query from "../../src/query";
 import * as disc from "../../src/disc";
 import * as entity from "../../src/entity";
 import * as services from "../../src/services";
 
-const LOG = debug(`${__filename}`);
+const LOG = getLogger(__filename);
 const firstName = "伍";
 
 describe(__filename, () => {

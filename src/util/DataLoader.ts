@@ -1,7 +1,7 @@
 import * as request from "request";
 import * as iconv from "iconv-lite";
-import * as debug from "debug";
-const LOG = debug(`${__dirname}${__filename}`);
+
+const LOG = getLogger(__filename);
 
 export const DataLoader = (options: request.Options) => {
     options.encoding = null;

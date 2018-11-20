@@ -1,11 +1,8 @@
 import * as assert from "assert";
 
-import * as debug from "debug";
 import { ReTry, Sleep } from "../../src/util";
 
-const LOG = debug(`${__filename}`);
-
-const name = "伍芷巧";
+const LOG = getLogger(__filename);
 
 describe(__filename, () => {
     it("Retry must run success", async () => {
@@ -18,6 +15,7 @@ describe(__filename, () => {
         const result = await ReTry.doAction(() => {
             count++;
             if (count === 3) {
+                LOG(`retry success ${count}`);
                 return Promise.resolve(true);
             }
             return Promise.reject(false);

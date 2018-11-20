@@ -1,9 +1,8 @@
 import * as assert from "assert";
 
 import * as query from "../../src/query";
-import * as debug from "debug";
 
-const LOG = debug(`${__filename}`);
+const LOG = getLogger(__filename);
 
 const name = "伍芷巧";
 const sex = "女";
