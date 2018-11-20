@@ -16,6 +16,7 @@ bin/
 
 # 代码覆盖报告目录 也不需要
 coverage/
+.nyc_output
 
 # 忽略mac 下的文件
 .DS_Store
