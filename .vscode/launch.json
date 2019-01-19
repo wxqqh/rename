@@ -12,14 +12,19 @@
             "args": [
                 "-u",
                 "tdd",
+                "--recursive",
                 "--timeout",
                 "999999",
                 "--colors",
-                "${workspaceFolder}/bin/test"
+                "--harmony",
+                "--check-leaks",
+                "bin/src/global/config.js",
+                "${workspaceFolder}/bin/test",
+                "--bail"
             ],
             "env": {
                 "NODE_ENV": "development",
-                "DEBUG": "*"
+                "DEBUG": "rename:*"
             },
             "internalConsoleOptions": "openOnSessionStart"
         },
